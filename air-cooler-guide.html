@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apartamento Aloe · How to Use the Air Cooler</title>
+  <style>
+    :root {
+      --blue: #2a7fb8;
+      --blue-dark: #1e5f8c;
+      --blue-soft: #e6f2f9;
+      --bg: #f5f8fa;
+      --ink: #233038;
+      --muted: #6a7a85;
+      --line: #e3eaef;
+      --warn-bg: #fff6e5;
+      --warn-line: #f0c067;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 52px 24px 60px;
+    }
+    header .ico { font-size: 46px; }
+    header h1 { font-size: 1.9rem; margin: 10px 0 6px; letter-spacing: .3px; }
+    header p { opacity: .92; font-size: 1.02rem; }
+    header .model { font-size: .82rem; opacity: .7; margin-top: 6px; letter-spacing: 1px; }
+
+    main { max-width: 760px; margin: -34px auto 60px; padding: 0 18px; }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 26px 28px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 20px rgba(20,60,90,.07);
+    }
+    .card h2 {
+      font-size: 1.2rem;
+      color: var(--blue-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .card h2 .n {
+      background: var(--blue);
+      color: #fff;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+      flex-shrink: 0;
+    }
+
+    .steps { list-style: none; counter-reset: step; }
+    .steps li {
+      position: relative;
+      padding: 10px 0 10px 44px;
+      border-bottom: 1px solid var(--line);
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0; top: 9px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-weight: 700;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem;
+    }
+    .steps li b { color: var(--ink); }
+
+    .btns { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      background: var(--blue-soft);
+      border-radius: 12px;
+    }
+    .btn .emoji {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      width: 36px; text-align: center;
+    }
+    .btn .label { font-weight: 700; color: var(--blue-dark); }
+    .btn .desc { font-size: .95rem; color: var(--ink); }
+
+    .modes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .mode {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+    .mode .e { font-size: 1.8rem; }
+    .mode .t { font-weight: 700; margin: 6px 0 2px; color: var(--blue-dark); }
+    .mode .d { font-size: .85rem; color: var(--muted); }
+
+    .tip {
+      background: var(--blue-soft);
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 14px;
+      font-size: .95rem;
+    }
+    .warn {
+      background: var(--warn-bg);
+      border-left: 4px solid var(--warn-line);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 8px;
+      font-size: .95rem;
+    }
+    .warn b { color: #a86b00; }
+
+    .key {
+      display: inline-block;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-weight: 700;
+      border-radius: 6px;
+      padding: 0 7px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .diagram { margin: 0 0 18px; }
+    .diagram img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      display: block;
+    }
+    .diagram figcaption {
+      text-align: center;
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .quick {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+    }
+    .quick .q {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+    .quick .q .e { font-size: 1.7rem; }
+    .quick .q .l { font-size: .85rem; margin-top: 4px; color: var(--ink); }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem;
+      padding: 0 20px 50px;
+    }
+    @media (max-width: 480px) {
+      .modes { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="ico">❄️</div>
+    <h1>How to Use the Air Cooler</h1>
+    <p>A quick, simple guide for your stay at Apartamento Aloe</p>
+    <div class="model">MIDEA · AIR COOLER · MCF23XRB</div>
+  </header>
+
+  <main>
+
+    <!-- WHAT IT IS -->
+    <div class="card">
+      <h2><span class="n">i</span> Good to know first</h2>
+      <p>This is an <b>evaporative air cooler</b> — it cools the air using <b>water</b> (and optional ice), not like a traditional A/C. For the best cool breeze, <b>add water to the tank</b> before turning it on. It works best with a <b>window slightly open</b> for fresh airflow.</p>
+    </div>
+
+    <!-- QUICK START -->
+    <div class="card">
+      <h2><span class="n">1</span> Quick start (3 steps)</h2>
+      <ol class="steps">
+        <li><b>Fill the water tank.</b> Slide out the tank at the bottom, fill with cool water between the <b>MIN</b> and <b>MAX</b> lines, then push it back until it clicks.</li>
+        <li><b>Press Power</b> <span class="key">⏻</span> to turn it on.</li>
+        <li><b>Press the Cool/Humidify button</b> <span class="key">≋</span> to start the cool, moist breeze. That’s it — enjoy!</li>
+      </ol>
+      <div class="tip">💡 <b>Want it extra cold?</b> Freeze the ice box (see step 4) and drop it in the water tank.</div>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="card">
+      <h2><span class="n">2</span> The control panel (on top of the unit)</h2>
+      <figure class="diagram">
+        <img src="control-panel-remote.png" alt="Diagram of the control panel display and the remote control">
+        <figcaption>The display panel and the remote control (labels shown in Spanish).</figcaption>
+      </figure>
+      <p style="margin-bottom:14px; color:var(--muted);">Tap the buttons on the top surface. The large display shows the speed or timer.</p>
+      <div class="btns">
+        <div class="btn"><span class="emoji">⏻</span><div><div class="label">Power</div><div class="desc">Turns the unit on or off.</div></div></div>
+        <div class="btn"><span class="emoji">≋</span><div><div class="label">Cool / Humidify</div><div class="desc">Turns the water-cooled (humidifying) breeze on or off. Leave it off for a plain fan breeze.</div></div></div>
+        <div class="btn"><span class="emoji">↔️</span><div><div class="label">Swing (OSC)</div><div class="desc">Makes the unit swing side to side to spread air across the room.</div></div></div>
+        <div class="btn"><span class="emoji">🌀</span><div><div class="label">Speed</div><div class="desc">Changes how strong the breeze is. Tap to cycle through the levels.</div></div></div>
+        <div class="btn"><span class="emoji">Ⓜ️</span><div><div class="label">Mode</div><div class="desc">Switches between the wind modes (see below). Tap to cycle through them.</div></div></div>
+        <div class="btn"><span class="emoji">🕐</span><div><div class="label">Timer</div><div class="desc">Turns the unit off automatically after a set number of hours. Tap, then keep tapping to choose the hours — the display shows e.g. “12h”.</div></div></div>
+      </div>
+    </div>
+
+    <!-- REMOTE -->
+    <div class="card">
+      <h2><span class="n">3</span> The remote control 🎮</h2>
+      <p style="margin-bottom:14px; color:var(--muted);">Works from up to <b>6 metres</b> away. Same functions as the panel:</p>
+      <div class="btns">
+        <div class="btn"><span class="emoji">↔️</span><div><div class="label">Swing (top-left)</div><div class="desc">Start / stop the side-to-side swing.</div></div></div>
+        <div class="btn"><span class="emoji">⏻</span><div><div class="label">Power (top-right)</div><div class="desc">Turn on or off.</div></div></div>
+        <div class="btn"><span class="emoji">Ⓜ️</span><div><div class="label">M — Mode (top of circle)</div><div class="desc">Cycle through the wind modes.</div></div></div>
+        <div class="btn"><span class="emoji">➖</span><div><div class="label">− and + (left / right)</div><div class="desc">Lower or raise the fan speed.</div></div></div>
+        <div class="btn"><span class="emoji">≋</span><div><div class="label">··· (centre button)</div><div class="desc">Turn the cool / humidify breeze on or off.</div></div></div>
+        <div class="btn"><span class="emoji">🕐</span><div><div class="label">Clock (bottom of circle)</div><div class="desc">Set the auto-off timer.</div></div></div>
+      </div>
+    </div>
+
+    <!-- MODES -->
+    <div class="card">
+      <h2><span class="n">4</span> Wind modes</h2>
+      <p style="margin-bottom:14px; color:var(--muted);">Press <b>Mode (M)</b> to switch. Press <b>Speed</b> / <b>+ −</b> to fine-tune the strength.</p>
+      <div class="modes">
+        <div class="mode"><div class="e">🌬️</div><div class="t">Normal</div><div class="d">Steady breeze, multiple strength levels</div></div>
+        <div class="mode"><div class="e">🌡️</div><div class="t">Sensi Cool</div><div class="d">Auto-adjusts the breeze to the room temperature</div></div>
+        <div class="mode"><div class="e">🌙</div><div class="t">Quiet / Sleep</div><div class="d">Soft, gradually gentler — ideal for the night</div></div>
+        <div class="mode"><div class="e">👶</div><div class="t">Baby</div><div class="d">Extra-soft, gentle airflow</div></div>
+      </div>
+      <div class="tip">✨ <b>Negative ions</b> are on by default to help keep the air fresh — nothing to set up.</div>
+    </div>
+
+    <!-- ICE BOX -->
+    <div class="card">
+      <h2><span class="n">5</span> For colder air: the ice box ❄️</h2>
+      <ol class="steps">
+        <li><b>Freeze it.</b> Put the ice crystal box in the freezer for <b>at least 3 hours</b>.</li>
+        <li><b>Add it to the tank.</b> Slide out the water tank, place the frozen box inside, and make sure water stays below the <b>MAX</b> line.</li>
+        <li><b>Turn on “Cooler.”</b> The breeze will feel noticeably colder. The box can be re-frozen and reused. (Regular ice cubes work too!)</li>
+      </ol>
+    </div>
+
+    <!-- TIPS / SAFETY -->
+    <div class="card">
+      <h2><span class="n">!</span> A few friendly reminders</h2>
+      <div class="quick" style="margin-bottom:14px;">
+        <div class="q"><div class="e">💧</div><div class="l">Keep water above the MIN line</div></div>
+        <div class="q"><div class="e">🪟</div><div class="l">Crack a window for fresh air</div></div>
+        <div class="q"><div class="e">🚫</div><div class="l">Don’t put objects on top</div></div>
+        <div class="q"><div class="e">🧴</div><div class="l">Water only — no oils or scents</div></div>
+      </div>
+      <div class="warn">⚠️ <b>Please don’t</b> tilt or move the unit while it’s full of water, and keep fingers away from the air outlet while it’s running. Thank you for taking care of it! 💙</div>
+    </div>
+
+  </main>
+
+  <footer>
+    Enjoy your stay at <b>Apartamento Aloe</b> 🌿<br>
+    <small>Any questions? Message your host — we’re happy to help.</small>
+  </footer>
+</body>
+</html>
