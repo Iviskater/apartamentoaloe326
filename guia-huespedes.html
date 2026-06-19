@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apartamento Aloe · Guía del huésped</title>
+  <style>
+    :root {
+      --verde: #4a7c59;
+      --verde-claro: #e8f0ea;
+      --arena: #f7f4ef;
+      --texto: #2d2d2d;
+      --suave: #6b6b6b;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--arena);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--verde) 0%, #3a6347 100%);
+      color: white;
+      text-align: center;
+      padding: 56px 24px 48px;
+    }
+    header .leaf { font-size: 44px; }
+    header h1 { font-size: 2.1rem; margin: 8px 0 4px; letter-spacing: .5px; }
+    header p { opacity: .9; font-size: 1.05rem; }
+    main { max-width: 720px; margin: -28px auto 60px; padding: 0 20px; }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px 26px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.06);
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      color: var(--verde);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .card h2 .ico { font-size: 1.3rem; }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 7px 0;
+      border-bottom: 1px solid #f0ede7;
+    }
+    .row:last-child { border-bottom: none; }
+    .row .k { color: var(--suave); }
+    .row .v { font-weight: 600; }
+    ul { list-style: none; }
+    ul li { padding: 6px 0 6px 26px; position: relative; }
+    ul li::before { content: "🌿"; position: absolute; left: 0; font-size: .9rem; }
+    .wifi {
+      background: var(--verde-claro);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      margin-top: 8px;
+    }
+    .wifi .label { font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--verde); }
+    .wifi .value { font-size: 1.4rem; font-weight: 700; font-family: monospace; margin-top: 4px; }
+    footer { text-align: center; color: var(--suave); font-size: .9rem; padding: 0 20px 50px; }
+    .editable { outline: none; }
+    .editable:focus { background: #fffbe6; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="leaf">🌵</div>
+    <h1>Apartamento Aloe</h1>
+    <p>¡Bienvenido! Nos alegra tenerte aquí 💚</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2><span class="ico">📶</span> WiFi</h2>
+      <div class="wifi">
+        <div class="label">Red</div>
+        <div class="value editable" contenteditable="true">Aloe_Guest</div>
+        <div class="label" style="margin-top:12px;">Contraseña</div>
+        <div class="value editable" contenteditable="true">bienvenido2026</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><span class="ico">🕐</span> Horarios</h2>
+      <div class="row"><span class="k">Check-in</span><span class="v editable" contenteditable="true">A partir de las 15:00</span></div>
+      <div class="row"><span class="k">Check-out</span><span class="v editable" contenteditable="true">Antes de las 11:00</span></div>
+    </div>
+
+    <div class="card">
+      <h2><span class="ico">🏡</span> La casa</h2>
+      <ul>
+        <li>El aire acondicionado se enciende con el mando blanco.</li>
+        <li>La cafetera y el café están en la cocina, ¡sírvete!</li>
+        <li>Toallas extra en el armario del baño.</li>
+        <li>La basura se saca al contenedor de la esquina.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2><span class="ico">📍</span> Recomendaciones cerca</h2>
+      <ul>
+        <li><b>Café:</b> <span class="editable" contenteditable="true">añade tu cafetería favorita</span></li>
+        <li><b>Restaurante:</b> <span class="editable" contenteditable="true">tu recomendación local</span></li>
+        <li><b>Supermercado:</b> <span class="editable" contenteditable="true">el más cercano</span></li>
+        <li><b>Playa / paseo:</b> <span class="editable" contenteditable="true">un imprescindible</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2><span class="ico">📞</span> Contacto</h2>
+      <div class="row"><span class="k">Anfitrión</span><span class="v editable" contenteditable="true">Tu nombre</span></div>
+      <div class="row"><span class="k">WhatsApp</span><span class="v editable" contenteditable="true">+34 600 000 000</span></div>
+      <p style="margin-top:12px; color:var(--suave); font-size:.92rem;">
+        Cualquier duda durante tu estancia, escríbenos. ¡Estamos para ayudarte!
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    Gracias por cuidar nuestro hogar 🌿<br>
+    <small>Toca cualquier texto resaltado para editarlo.</small>
+  </footer>
+</body>
+</html>
