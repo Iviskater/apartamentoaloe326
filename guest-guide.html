@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Guide · Designer Apartment · Playa del Inglés</title>
+  <style>
+    :root {
+      --gold: #b8943f;
+      --gold-soft: #cbb274;
+      --ink: #2b2a26;
+      --muted: #7d776c;
+      --cream: #faf7f1;
+      --card: #ffffff;
+      --line: #ece5d8;
+      --sand: #f3ecde;
+      --dark: #1c1b18;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .serif { font-family: Georgia, "Times New Roman", serif; }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 54px 24px 40px;
+      background:
+        radial-gradient(120% 80% at 50% 0%, #fbf3e2 0%, var(--cream) 70%);
+      border-bottom: 1px solid var(--line);
+    }
+    header .ico { font-size: 40px; }
+    header .eyebrow {
+      letter-spacing: 4px;
+      font-size: .72rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin: 14px 0 8px;
+      font-weight: 700;
+    }
+    header h1 { font-size: 2.4rem; font-weight: 400; color: var(--dark); }
+    header .sub { color: var(--muted); margin-top: 8px; font-style: italic; }
+    .divider { color: var(--gold-soft); margin: 18px 0 0; font-size: 1rem; }
+
+    main { max-width: 820px; margin: 0 auto; padding: 28px 18px 60px; }
+
+    section { margin-bottom: 34px; }
+    .sec-title {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.35rem; color: var(--dark);
+      margin: 0 0 16px; font-weight: 400;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--sand);
+    }
+    .sec-title .badge {
+      font-size: .6rem; letter-spacing: 2px; color: var(--gold);
+      text-transform: uppercase; margin-left: auto; font-family: -apple-system, sans-serif;
+    }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .card h3 {
+      font-size: .82rem; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--gold); display: flex; align-items: center; gap: 9px;
+      margin-bottom: 8px; font-weight: 700;
+    }
+    .card h3 .e { font-size: 1.15rem; }
+    .card p { font-size: .95rem; color: var(--ink); }
+    .card p b { color: var(--dark); }
+
+    /* WIFI dark card */
+    .wifi {
+      background: var(--dark); color: #fff;
+      border-radius: 16px; padding: 22px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap; margin-bottom: 12px;
+    }
+    .wifi h3 { color: var(--gold-soft); }
+    .wifi p { color: #cfc9bd; font-size: .92rem; }
+    .wifi .qr {
+      background: #fff; color: #555; border-radius: 10px;
+      padding: 14px 16px; text-align: center; font-size: .72rem;
+    }
+    .wifi .qr .big { font-size: 1.5rem; }
+
+    /* lists */
+    ul.clean { list-style: none; }
+    ul.clean li {
+      padding: 9px 0 9px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    ul.clean li:last-child { border-bottom: none; }
+    ul.clean li .e { font-size: 1.2rem; flex-shrink: 0; width: 26px; text-align: center; }
+    ul.clean li .txt { font-size: .95rem; }
+    ul.clean li .txt b { color: var(--dark); }
+    .tag {
+      display: inline-block; font-size: .72rem; font-weight: 700;
+      background: var(--sand); color: var(--gold);
+      border-radius: 20px; padding: 1px 9px; margin-left: 6px;
+      letter-spacing: .5px; vertical-align: middle;
+    }
+
+    .note {
+      background: var(--sand); border-radius: 12px;
+      padding: 13px 16px; font-size: .92rem; margin-top: 12px;
+      border-left: 3px solid var(--gold-soft);
+    }
+
+    /* contacts */
+    .contacts {
+      background: var(--dark); color: #efe9dc; border-radius: 16px;
+      padding: 24px 26px;
+    }
+    .contacts h2 { font-weight: 400; font-size: 1.3rem; margin-bottom: 16px; color: #fff; }
+    .contacts .row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+      gap: 16px;
+    }
+    .contacts .item .l {
+      font-size: .72rem; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--gold-soft); margin-bottom: 3px;
+    }
+    .contacts .item .v { font-size: .95rem; }
+    .contacts .item .v b { color: #fff; }
+    .em112 { font-size: 1.6rem; font-weight: 700; color: #fff; }
+
+    footer {
+      text-align: center; color: var(--muted); padding: 30px 20px 50px;
+      font-style: italic;
+    }
+    footer .host {
+      font-style: normal; letter-spacing: 2px; font-size: .7rem;
+      text-transform: uppercase; color: var(--gold); margin-top: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      header h1 { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="ico">🏡</div>
+    <div class="eyebrow">Designer Apartment · Playa del Inglés · Maspalomas</div>
+    <h1 class="serif">Welcome to Gran Canaria</h1>
+    <p class="sub">Your complete guest guide — everything for a perfect stay</p>
+    <div class="divider">✦ ✦ ✦</div>
+  </header>
+
+  <main>
+
+    <!-- WIFI -->
+    <section>
+      <div class="wifi">
+        <div>
+          <h3>📶 WiFi</h3>
+          <p><b style="color:#fff">Scan the QR code to connect instantly.</b><br>
+          No password needed — just point your phone camera at the code on the printed House Rules card.</p>
+        </div>
+        <div class="qr">
+          <div class="big">▣</div>
+          Scan to connect
+        </div>
+      </div>
+    </section>
+
+    <!-- ARRIVAL ESSENTIALS -->
+    <section>
+      <h2 class="sec-title serif">🔑 Arrival &amp; Essentials <span class="badge">House Rules</span></h2>
+      <div class="grid">
+        <div class="card">
+          <h3><span class="e">🔑</span> Check-in &amp; Check-out</h3>
+          <p><b>Check-in:</b> from 15:00 · Smart keypad (code sent before arrival).<br>
+          <b>Check-out:</b> by 11:00 · Please ensure the door is properly closed.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🗝️</span> Keys &amp; Access Cards</h3>
+          <p>Leave the <b>building card</b> and <b>pool keys</b> inside the smart locker before check-out. Lost items incur a replacement fee.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🚭</span> No Smoking Indoors</h3>
+          <p>Smoking is permitted <b>on the terrace only</b>. Strictly no smoking inside the apartment. Please dispose of butts responsibly.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🎵</span> Noise &amp; Neighbours</h3>
+          <p>Quiet hours: <b>23:00 – 09:00</b>. Music welcome at a considerate volume. 24h security in the complex — please be respectful.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE APARTMENT -->
+    <section>
+      <h2 class="sec-title serif">🛋️ The Apartment <span class="badge">House Rules</span></h2>
+      <div class="grid">
+        <div class="card">
+          <h3><span class="e">☕</span> Kitchen &amp; Appliances</h3>
+          <p>Fully equipped — use everything, including the <b>dishwasher</b> (liquid provided). <b>Nespresso</b> with pods as a welcome gift. Please wash and return all items.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🛁</span> Towels &amp; Linen</h3>
+          <p>Fresh towels and linen provided. At check-out, gather used towels in the bathroom. <b>Towels for indoor use only</b> — not for pool or beach.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🌬️</span> Air Cooler</h3>
+          <p>The apartment has a Midea air cooler. See the separate <b>“How to Use the Air Cooler”</b> guide — fill the water tank, press Power, then the cool/humidify button.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">💡</span> Energy &amp; Appliances</h3>
+          <p>Please switch off all lights and appliances when leaving. Gran Canaria's mild climate keeps you comfortable year-round 🌴</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🧺</span> Washing Machine</h3>
+          <p>Available on request for stays of <b>2 weeks or more</b>. Just message your host via Airbnb and we'll arrange it.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🗑️</span> Rubbish</h3>
+          <p>Bags under the kitchen sink. Use the <b>building access card</b> to open the rubbish room at the complex entrance. Thank you for keeping it tidy!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPLEX FACILITIES -->
+    <section>
+      <h2 class="sec-title serif">🏊 Complex &amp; Facilities <span class="badge">House Rules</span></h2>
+      <div class="grid">
+        <div class="card">
+          <h3><span class="e">🏊</span> Pool</h3>
+          <p>Open during complex hours. Return pool keys to the smart locker at check-out. Please respect all common areas and fellow residents.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🎾</span> Tennis Court</h3>
+          <p>Booking required in advance. Contact your host via Airbnb to reserve your slot — we'll arrange it for you.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">👥</span> Registered Guests Only</h3>
+          <p>The apartment is reserved for registered guests. Please do not bring unregistered visitors for overnight stays.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🛒</span> Groceries Nearby</h3>
+          <p><b>Gordillo</b> supermarket on the ground floor, with a <b>Spar</b> nearby — perfect for everyday essentials.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORE: ATTRACTIONS -->
+    <section>
+      <h2 class="sec-title serif">🌅 Explore Playa del Inglés &amp; Maspalomas <span class="badge">Local Guide</span></h2>
+      <ul class="clean">
+        <li><span class="e">🏜️</span><div class="txt"><b>Maspalomas Dunes</b> <span class="tag">Must-see</span><br>A vast protected nature reserve of golden sand dunes meeting the ocean — like a desert by the sea. Best at <b>sunrise or late afternoon</b> for cooler light and fewer crowds. Stay on the marked paths.</div></li>
+        <li><span class="e">🗼</span><div class="txt"><b>Maspalomas Lighthouse (El Faro)</b><br>The historic landmark at the south tip. Stroll the seafront promenade from here past Meloneras — gardens, boutiques and waterfront cafés.</div></li>
+        <li><span class="e">🏖️</span><div class="txt"><b>Playa del Inglés Beach</b><br>3 km of golden sand right on your doorstep, flowing into Maspalomas beach. Family zones, surf spots and quieter stretches. Swim between the lifeguard flags.</div></li>
+        <li><span class="e">🦩</span><div class="txt"><b>La Charca Pond</b><br>A peaceful bird sanctuary between the dunes and the sea — lovely at sunset.</div></li>
+        <li><span class="e">🦜</span><div class="txt"><b>Palmitos Park</b> <span class="tag">Family</span><br>Wildlife park in a palm-filled valley — birds of prey, dolphins, parrots. A great family day out (bus line 45). Pre-book tickets.</div></li>
+        <li><span class="e">🛍️</span><div class="txt"><b>Yumbo Centrum</b><br>The lively heart of evening Playa del Inglés — shops, restaurants, bars and famous nightly shows. Busiest after dark.</div></li>
+        <li><span class="e">🐫</span><div class="txt"><b>Camel Safari &amp; Boat Trips</b><br>Camel rides across the dunes, or catamaran/snorkelling tours along the south coast — easy to book locally.</div></li>
+      </ul>
+    </section>
+
+    <!-- EAT -->
+    <section>
+      <h2 class="sec-title serif">🍽️ Where to Eat <span class="badge">Local Guide</span></h2>
+      <div class="grid">
+        <div class="card">
+          <h3><span class="e">🍤</span> Wapa Tapa</h3>
+          <p>Beloved family-run <b>tapas</b> bar in the Yumbo Centre. Reservations essential. Spanish &amp; Canarian classics.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🥩</span> Las Brasas / El Churrasco</h3>
+          <p>Excellent <b>steak</b> houses — among the best in the area, reasonably priced.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🇬🇷</span> Greek Village</h3>
+          <p>Quieter, romantic <b>Greek</b> spot away from the Yumbo bustle. Booking advised in the evening.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🫓</span> Maná 264</h3>
+          <p>Traditional <b>Canarian &amp; Spanish</b> cuisine — try papas arrugadas with mojo.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🌮</span> El Chacho</h3>
+          <p>Relaxed, authentic <b>Mexican</b> — a great family choice with options for all ages.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🍝</span> Marco Polo</h3>
+          <p>Highly-rated <b>Italian</b> at CC Cita — fresh pasta and pizza.</p>
+        </div>
+      </div>
+      <div class="note">🍴 <b>Local tip:</b> Try the Canarian classics everywhere — <i>papas arrugadas</i> (wrinkly potatoes) with red &amp; green <i>mojo</i> sauce, fresh fish, and local <i>gofio</i>. Reserve popular spots in high season.</div>
+    </section>
+
+    <!-- GETTING AROUND -->
+    <section>
+      <h2 class="sec-title serif">🚌 Getting Around <span class="badge">Local Guide</span></h2>
+      <ul class="clean">
+        <li><span class="e">🚶</span><div class="txt"><b>On foot / by bike</b> — The town centre, beach promenade and Yumbo are compact and easily walkable. Loveliest early morning or evening.</div></li>
+        <li><span class="e">🚌</span><div class="txt"><b>Buses (Guaguas — Global)</b> — Cheap, clean and reliable across the island. Two stations: <b>Playa del Inglés</b> (Tropical centre, north to Las Palmas) and <b>Maspalomas</b> (by the lighthouse, south coast resorts).<br>Handy lines: <b>30</b> → Las Palmas · <b>32/33</b> → Puerto de Mogán · <b>45</b> → Palmitos Park · <b>66</b> → Airport.</div></li>
+        <li><span class="e">✈️</span><div class="txt"><b>Airport transfer</b> — Bus <b>66</b> or <b>30</b> are the fastest (≈ €3.50–4). A taxi is roughly <b>€50–60</b> door-to-door.</div></li>
+        <li><span class="e">🚕</span><div class="txt"><b>Taxis</b> — Official taxis are metered; ranks at the bus stations and resort centre. Best for late nights or heavy luggage.</div></li>
+        <li><span class="e">🚗</span><div class="txt"><b>Car hire</b> — Worth it only for inland day trips (mountain villages, Fataga, Tejeda). Otherwise buses cover the coast well.</div></li>
+      </ul>
+    </section>
+
+    <!-- DAY TRIPS -->
+    <section>
+      <h2 class="sec-title serif">🗺️ Worthwhile Day Trips <span class="badge">Local Guide</span></h2>
+      <div class="grid">
+        <div class="card">
+          <h3><span class="e">⛵</span> Puerto de Mogán</h3>
+          <p>The pretty "little Venice" harbour town — canals, seafood by the water. Bus 32/33.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🏙️</span> Las Palmas</h3>
+          <p>The capital: historic Vegueta old town &amp; beautiful Las Canteras beach. Bus 30.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">⛰️</span> Fataga &amp; the Mountains</h3>
+          <p>Spectacular drive into pretty hill villages (bus 18) — a different side of the island.</p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🔭</span> Mirador Astronómico</h3>
+          <p>Degollada de las Yeguas viewpoint — superb stargazing with little light pollution.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section>
+      <div class="contacts">
+        <h2 class="serif">⚠️ Emergency &amp; Useful Contacts</h2>
+        <div class="row">
+          <div class="item">
+            <div class="l">🚑 Emergency</div>
+            <div class="em112">112</div>
+          </div>
+          <div class="item">
+            <div class="l">🏥 Hospitals (Urgency)</div>
+            <div class="v"><b>Hospital San Roque</b><br>Hospiten Roca</div>
+          </div>
+          <div class="item">
+            <div class="l">💊 Pharmacy (nearest)</div>
+            <div class="v"><b>Farmacia Isabel Afonso Castro</b><br>24h duty: canarias7.es/farmacias</div>
+          </div>
+          <div class="item">
+            <div class="l">🛒 Supermarket</div>
+            <div class="v"><b>Gordillo</b> (ground floor)<br>Spar (nearby)</div>
+          </div>
+          <div class="item">
+            <div class="l">📲 Host</div>
+            <div class="v"><b>Message via Airbnb</b><br>We're just a message away</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    "We hope you feel at home — enjoy every moment of Gran Canaria 🌴"
+    <div class="host">Any questions? We are just a message away · Hosted by Ivan</div>
+  </footer>
+
+</body>
+</html>
