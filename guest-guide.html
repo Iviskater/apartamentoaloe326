@@ -25,36 +25,29 @@
     }
     .serif { font-family: Georgia, "Times New Roman", serif; }
 
-    /* HEADER */
     header {
       text-align: center;
       padding: 54px 24px 40px;
-      background:
-        radial-gradient(120% 80% at 50% 0%, #fbf3e2 0%, var(--cream) 70%);
+      background: radial-gradient(120% 80% at 50% 0%, #fbf3e2 0%, var(--cream) 70%);
       border-bottom: 1px solid var(--line);
     }
     header .ico { font-size: 40px; }
     header .eyebrow {
-      letter-spacing: 4px;
-      font-size: .72rem;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin: 14px 0 8px;
-      font-weight: 700;
+      letter-spacing: 4px; font-size: .72rem; color: var(--gold);
+      text-transform: uppercase; margin: 14px 0 8px; font-weight: 700;
     }
     header h1 { font-size: 2.4rem; font-weight: 400; color: var(--dark); }
     header .sub { color: var(--muted); margin-top: 8px; font-style: italic; }
     .divider { color: var(--gold-soft); margin: 18px 0 0; font-size: 1rem; }
 
     main { max-width: 820px; margin: 0 auto; padding: 28px 18px 60px; }
-
     section { margin-bottom: 34px; }
+
     .sec-title {
       display: flex; align-items: center; gap: 10px;
       font-size: 1.35rem; color: var(--dark);
       margin: 0 0 16px; font-weight: 400;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--sand);
+      padding-bottom: 8px; border-bottom: 2px solid var(--sand);
     }
     .sec-title .badge {
       font-size: .6rem; letter-spacing: 2px; color: var(--gold);
@@ -63,10 +56,8 @@
 
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px 20px;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 14px; padding: 18px 20px;
     }
     .card h3 {
       font-size: .82rem; letter-spacing: 1px; text-transform: uppercase;
@@ -76,6 +67,8 @@
     .card h3 .e { font-size: 1.15rem; }
     .card p { font-size: .95rem; color: var(--ink); }
     .card p b { color: var(--dark); }
+    .card a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    .card a:hover { text-decoration: underline; }
 
     /* WIFI dark card */
     .wifi {
@@ -84,19 +77,24 @@
       display: flex; align-items: center; justify-content: space-between;
       gap: 20px; flex-wrap: wrap; margin-bottom: 12px;
     }
-    .wifi h3 { color: var(--gold-soft); }
+    .wifi h3 { color: var(--gold-soft); font-size: .9rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
     .wifi p { color: #cfc9bd; font-size: .92rem; }
     .wifi .qr {
       background: #fff; color: #555; border-radius: 10px;
       padding: 14px 16px; text-align: center; font-size: .72rem;
     }
     .wifi .qr .big { font-size: 1.5rem; }
+    .wifi-networks { display: flex; gap: 16px; margin-top: 10px; flex-wrap: wrap; }
+    .wifi-net {
+      background: rgba(255,255,255,0.08); border-radius: 10px;
+      padding: 10px 16px; font-size: .88rem;
+    }
+    .wifi-net .label { font-size: .7rem; color: var(--gold-soft); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+    .wifi-net .name { color: #fff; font-weight: 600; }
 
-    /* lists */
     ul.clean { list-style: none; }
     ul.clean li {
-      padding: 9px 0 9px 0;
-      border-bottom: 1px solid var(--line);
+      padding: 9px 0 9px 0; border-bottom: 1px solid var(--line);
       display: flex; gap: 12px; align-items: flex-start;
     }
     ul.clean li:last-child { border-bottom: none; }
@@ -116,16 +114,11 @@
       border-left: 3px solid var(--gold-soft);
     }
 
-    /* contacts */
     .contacts {
-      background: var(--dark); color: #efe9dc; border-radius: 16px;
-      padding: 24px 26px;
+      background: var(--dark); color: #efe9dc; border-radius: 16px; padding: 24px 26px;
     }
     .contacts h2 { font-weight: 400; font-size: 1.3rem; margin-bottom: 16px; color: #fff; }
-    .contacts .row {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-      gap: 16px;
-    }
+    .contacts .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 16px; }
     .contacts .item .l {
       font-size: .72rem; letter-spacing: 1px; text-transform: uppercase;
       color: var(--gold-soft); margin-bottom: 3px;
@@ -135,8 +128,7 @@
     .em112 { font-size: 1.6rem; font-weight: 700; color: #fff; }
 
     footer {
-      text-align: center; color: var(--muted); padding: 30px 20px 50px;
-      font-style: italic;
+      text-align: center; color: var(--muted); padding: 30px 20px 50px; font-style: italic;
     }
     footer .host {
       font-style: normal; letter-spacing: 2px; font-size: .7rem;
@@ -164,14 +156,23 @@
     <!-- WIFI -->
     <section>
       <div class="wifi">
-        <div>
+        <div style="flex:1">
           <h3>📶 WiFi</h3>
-          <p><b style="color:#fff">Scan the QR code to connect instantly.</b><br>
-          No password needed — just point your phone camera at the code on the printed House Rules card.</p>
+          <p><b style="color:#fff">No password needed — just scan the QR codes inside the apartment</b> with your phone camera to connect instantly.</p>
+          <div class="wifi-networks">
+            <div class="wifi-net">
+              <div class="label">Living room area</div>
+              <div class="name">vodafoneBA1970</div>
+            </div>
+            <div class="wifi-net">
+              <div class="label">Bedroom &amp; office</div>
+              <div class="name">vodafoneBA1970_EXT</div>
+            </div>
+          </div>
         </div>
         <div class="qr">
           <div class="big">▣</div>
-          Scan to connect
+          Scan inside
         </div>
       </div>
     </section>
@@ -187,7 +188,7 @@
         </div>
         <div class="card">
           <h3><span class="e">🗝️</span> Keys &amp; Access Cards</h3>
-          <p>Leave the <b>building card</b> and <b>pool keys</b> inside the smart locker before check-out. Lost items incur a replacement fee.</p>
+          <p>Before check-out, leave the <b>building card</b> and <b>pool keys</b> inside the apartment in the <b>furniture unit below the TV</b>. Lost items incur a replacement fee.</p>
         </div>
         <div class="card">
           <h3><span class="e">🚭</span> No Smoking Indoors</h3>
@@ -195,7 +196,7 @@
         </div>
         <div class="card">
           <h3><span class="e">🎵</span> Noise &amp; Neighbours</h3>
-          <p>Quiet hours: <b>23:00 – 09:00</b>. Music welcome at a considerate volume. 24h security in the complex — please be respectful.</p>
+          <p>Quiet hours: <b>23:00 – 09:00</b>. Music is welcome but please keep it at a normal, considerate volume — there are <b>permanent residents</b> living in the complex. 24h security on site. Thank you for your cooperation 🙏</p>
         </div>
       </div>
     </section>
@@ -214,7 +215,8 @@
         </div>
         <div class="card">
           <h3><span class="e">🌬️</span> Air Cooler</h3>
-          <p>The apartment has a Midea air cooler. See the separate <b>“How to Use the Air Cooler”</b> guide — fill the water tank, press Power, then the cool/humidify button.</p>
+          <p>The apartment has a <b>Midea air cooler</b>. Fill the water tank, press Power, then the cool/humidify button.<br>
+          👉 <a href="https://iviskater.github.io/apartamentoaloe326/air-cooler-guide.html" target="_blank" rel="noopener">Full how-to guide here</a></p>
         </div>
         <div class="card">
           <h3><span class="e">💡</span> Energy &amp; Appliances</h3>
@@ -237,7 +239,7 @@
       <div class="grid">
         <div class="card">
           <h3><span class="e">🏊</span> Pool</h3>
-          <p>Open during complex hours. Return pool keys to the smart locker at check-out. Please respect all common areas and fellow residents.</p>
+          <p>Open during complex hours. Leave pool keys in the <b>furniture unit below the TV</b> at check-out. Please respect all common areas and fellow residents.</p>
         </div>
         <div class="card">
           <h3><span class="e">🎾</span> Tennis Court</h3>
@@ -272,6 +274,26 @@
     <section>
       <h2 class="sec-title serif">🍽️ Where to Eat <span class="badge">Local Guide</span></h2>
       <div class="grid">
+        <div class="card">
+          <h3><span class="e">☀️</span> Calma Café <span class="tag">Breakfast</span></h3>
+          <p>Just downstairs — perfect for a relaxed morning coffee and breakfast. <br>
+          👉 <a href="https://maps.app.goo.gl/dqB8mB2mFkcwyZbCA" target="_blank" rel="noopener">View on Maps</a></p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🥩</span> El Poncho Asador <span class="tag">Steak</span></h3>
+          <p>Just 2 min walk — one of the best steak spots in the area.<br>
+          👉 <a href="https://maps.app.goo.gl/7qP29SfNm82bFGa99" target="_blank" rel="noopener">View on Maps</a></p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🍔</span> B2B Burger Bar <span class="tag">Burgers</span></h3>
+          <p>Right downstairs — great burgers and cold beers. A local favourite.<br>
+          👉 <a href="https://maps.app.goo.gl/xAwjmTQTbAyK3PV58" target="_blank" rel="noopener">View on Maps</a></p>
+        </div>
+        <div class="card">
+          <h3><span class="e">🥐</span> Bäckerei Zipf <span class="tag">Bakery</span></h3>
+          <p>Excellent German bakery — fresh bread, pastries and breakfast bites.<br>
+          👉 <a href="https://maps.app.goo.gl/cSSvxtTiJ1MwBYvi9" target="_blank" rel="noopener">View on Maps</a></p>
+        </div>
         <div class="card">
           <h3><span class="e">🍤</span> Wapa Tapa</h3>
           <p>Beloved family-run <b>tapas</b> bar in the Yumbo Centre. Reservations essential. Spanish &amp; Canarian classics.</p>
@@ -368,7 +390,7 @@
 
   <footer>
     "We hope you feel at home — enjoy every moment of Gran Canaria 🌴"
-    <div class="host">Any questions? We are just a message away · Hosted by Ivan</div>
+    <div class="host">Ivan · Designer Apartment · Maspalomas Dunes</div>
   </footer>
 
 </body>
